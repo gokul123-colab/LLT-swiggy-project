@@ -13,6 +13,15 @@ class Cart {
         totalAmount += price;
     }
 
+    public boolean removeItem(String itemName) {
+        if (items.containsKey(itemName)) {
+            totalAmount -= items.get(itemName); // Decrease total amount
+            items.remove(itemName); // Remove item from cart
+            return true;
+        }
+        return false;
+    }
+
     public int getTotalAmount() {
         return totalAmount;
     }
